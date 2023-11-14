@@ -1,0 +1,11 @@
+<ul>
+    <input type="checkbox" (change)="hidePurchased($event)" />
+    <span> Hide purchased items</span>
+  @for (item of list; track item.product) { @if (show || !item.purchased) {
+  <li>
+    <input type="checkbox" (change)="purchase($event, item.product)" [checked]="item.purchased"/>
+    <span> {{ item.product }} - {{ item.quantity }}</span>
+    <button style="margin-left: 10px;" (click)="delete(item.product)"> Delete </button>
+  </li>
+  } }
+</ul>
