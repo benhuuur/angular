@@ -1,6 +1,13 @@
 <ul>
-    <input type="checkbox" (change)="hidePurchased($event)" />
-    <span> Hide purchased items</span>
+  <input type="text" name="" id="" (change)="setProduct($event)" style="width: 90px;">
+  <input type="number" name="" id="" (change)="setNumber($event)" style="margin-left: 10px; width: 40px;">
+  <button style="margin-left: 10px;" (click)="add($event)" > Adicionar </button>
+  <br>
+  <br>
+  <input type="checkbox" (change)="hidePurchased($event)" />
+  <span> Hide purchased items</span>
+  <br>
+  <br>
   @for (item of list; track item.product) { @if (show || !item.purchased) {
   <li>
     <input type="checkbox" (change)="purchase($event, item.product)" [checked]="item.purchased"/>
