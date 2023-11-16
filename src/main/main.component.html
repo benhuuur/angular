@@ -8,11 +8,11 @@
   <span> Hide purchased items</span>
   <br>
   <br>
-  @for (item of list; track item.product) { @if (show || !item.purchased) {
+  @for (item of list; track item.name) { @if (show || !item.purchased) {
   <li>
-    <input type="checkbox" (change)="purchase($event, item.product)" [checked]="item.purchased"/>
-    <span> {{ item.product }} - {{ item.quantity }}</span>
-    <button style="margin-left: 10px;" (click)="delete(item.product)"> Delete </button>
+    <input type="checkbox" (change)="purchase($event, item.name)" [checked]="item.purchased"/>
+    <span> {{ item.name }} - {{ item.quantity }}</span>
+    <button style="margin-left: 10px;" (click)="delete(item.name)"> Delete </button>
   </li>
   } }
 </ul>
